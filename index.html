@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Haizel Masongsong — VA & Graphic Designer</title>
+  <meta name="description" content="Virtual Assistant & Graphic Designer portfolio of Haizel Masongsong. Email management, data entry, scheduling, and social media graphics (Canva)." />
+  <meta name="author" content="Haizel Masongsong" />
+  <meta property="og:title" content="Haizel Masongsong — VA & Graphic Designer" />
+  <meta property="og:description" content="Clean, modern portfolio showcasing VA services and graphic design work." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/Portfolio.png" />
+  <meta property="og:url" content="" />
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#222222;            /* light black */
+      --pink:#F8C8DC;           /* light pink */
+      --bg:#FFFFFF;
+      --muted:#6b7280;          /* slate-ish */
+      --card:#f7f7f8;
+      --ring:rgba(248,200,220,.6);
+      --shadow:0 10px 30px rgba(0,0,0,.06);
+      --radius:18px;
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;
+      color:var(--ink);
+      background:var(--bg);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    /* Header / Nav */
+    .nav{
+      position:sticky;top:0;z-index:50;background:rgba(255,255,255,.8);backdrop-filter:blur(10px);
+      border-bottom:1px solid #eee;
+    }
+    .nav-inner{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px;}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.3px}
+    .dot{width:12px;height:12px;border-radius:999px;background:var(--pink);box-shadow:0 0 0 6px var(--ring)}
+    .menu{display:flex;gap:22px;align-items:center}
+    .menu a{font-weight:500;opacity:.8}
+    .menu a:hover{opacity:1}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:var(--radius);background:var(--ink);color:#fff;box-shadow:var(--shadow);border:1px solid #000;}
+    .btn.outline{background:#fff;color:var(--ink);border:1px solid var(--ink)}
+    .btn.pink{background:var(--pink);color:#222;border:1px solid #f3aac5}
+
+    /* Mobile */
+    .hamburger{display:none;cursor:pointer}
+    .mobile{display:none}
+
+    /* Hero */
+    .section{padding:72px 20px}
+    .hero{padding:96px 20px 64px;background:linear-gradient(180deg,#fff, #fdf5f8 60%, #fff)}
+    .wrap{max-width:var(--maxw);margin:0 auto}
+    .hero-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid #eee;border-radius:999px;padding:8px 12px;font-size:13px;color:var(--muted)}
+    .title{font-size:42px;line-height:1.15;margin:14px 0 10px}
+    .subtitle{font-size:18px;color:var(--muted);max-width:60ch}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+    .card{background:var(--card);border:1px solid #eee;border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .badge{background:#fff;border:1px dashed #e5e7eb;border-radius:999px;padding:8px 12px;font-size:13px;color:#374151}
+
+    /* About */
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+    .h2{font-size:32px;margin:0 0 10px}
+    .muted{color:var(--muted)}
+    .list{display:grid;gap:10px;margin:12px 0 0;padding:0}
+    .list li{list-style:none;display:flex;gap:10px;align-items:flex-start}
+    .check{width:22px;height:22px;border-radius:8px;background:var(--pink);display:inline-flex;align-items:center;justify-content:center;border:1px solid #f3aac5;flex:0 0 auto}
+
+    /* Services */
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service{transition:transform .2s ease, box-shadow .2s ease}
+    .service:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(0,0,0,.08)}
+    .service h3{margin:6px 0 6px}
+    .service p{color:var(--muted);font-size:15px}
+
+    /* Portfolio */
+    .filter{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+    .filter button{border:1px solid #e5e7eb;background:#fff;border-radius:999px;padding:8px 12px;cursor:pointer}
+    .filter button.active{background:var(--pink);border-color:#f3aac5}
+    .portfolio{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .tile{position:relative;overflow:hidden;border-radius:16px;border:1px solid #eee;background:#fff}
+    .tile img{width:100%;height:240px;object-fit:cover;transition:transform .4s ease}
+    .tile:hover img{transform:scale(1.06)}
+    .tile .hover{position:absolute;inset:0;display:grid;place-items:end;opacity:0;background:linear-gradient(180deg,transparent,rgba(0,0,0,.55));color:#fff;padding:14px;transition:opacity .25s ease}
+    .tile:hover .hover{opacity:1}
+
+    /* Contact */
+    form{display:grid;gap:12px}
+    input, textarea{width:100%;padding:12px 14px;border:1px solid #e5e7eb;border-radius:12px;font:inherit}
+    input:focus, textarea:focus{outline:2px solid var(--ring)}
+
+    /* Footer */
+    footer{padding:32px 20px;border-top:1px solid #eee;background:#fff}
+    .footer-inner{max-width:var(--maxw);margin:0 auto;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}
+
+    /* Responsive */
+    @media (max-width: 940px){
+      .hero-inner{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr 1fr}
+      .portfolio{grid-template-columns:1fr 1fr}
+      .menu{display:none}
+      .hamburger{display:block}
+      .mobile{display:none;position:absolute;inset:56px 0 auto 0;background:#fff;border-bottom:1px solid #eee}
+      .mobile a{display:block;padding:14px 20px;border-top:1px solid #f5f5f5}
+    }
+    @media (max-width: 560px){
+      .cards{grid-template-columns:1fr}
+      .portfolio{grid-template-columns:1fr}
+      .title{font-size:34px}
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Haizel Masongsong",
+    "jobTitle":"Virtual Assistant & Graphic Designer",
+    "email":"mailto:haizelmasongsong@gmail.com",
+    "url":"",
+    "sameAs":["https://www.linkedin.com/in/haizel-masongsong-4a4446377/"],
+    "knowsAbout":["Email Management","Data Entry","Scheduling","Canva","Social Media Graphics","Branding"],
+    "image":"assets/image2.jpg"
+  }
+  </script>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav" aria-label="Primary Navigation">
+    <div class="nav-inner">
+      <a class="brand" href="#home" aria-label="Home">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Haizel Masongsong</span>
+      </a>
+      <div class="menu" role="menubar">
+        <a href="#about" role="menuitem">About</a>
+        <a href="#services" role="menuitem">Services</a>
+        <a href="#portfolio" role="menuitem">Portfolio</a>
+        <a href="#contact" role="menuitem">Contact</a>
+        <a class="btn outline" href="assets/My CV.pdf" download>Download CV</a>
+      </div>
+      <button class="hamburger" aria-label="Open menu" onclick="toggleMobile()">☰</button>
+    </div>
+    <div class="mobile" id="mobileMenu">
+      <a href="#about" onclick="toggleMobile()">About</a>
+      <a href="#services" onclick="toggleMobile()">Services</a>
+      <a href="#portfolio" onclick="toggleMobile()">Portfolio</a>
+      <a href="#contact" onclick="toggleMobile()">Contact</a>
+      <a href="assets/My CV.pdf" download onclick="toggleMobile()">Download CV</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="home">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="eyebrow">Aspiring Virtual Assistant • Graphic Designer</span>
+        <h1 class="title">Organized, reliable, and design-savvy support for your business.</h1>
+        <p class="subtitle">I help entrepreneurs stay on top of their inboxes, schedules, and data — while creating clean, on-brand visuals for social media using Canva.</p>
+        <div class="cta">
+          <a class="btn pink" href="#contact">Hire Me</a>
+          <a class="btn outline" href="#portfolio">See My Work</a>
+        </div>
+        <div class="badges">
+          <span class="badge">Email Management</span>
+          <span class="badge">Data Entry</span>
+          <span class="badge">Scheduling</span>
+          <span class="badge">Canva</span>
+          <span class="badge">Social Media Graphics</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="assets/image2.jpg" alt="Preview collage of VA tools and social media posts" />
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="wrap grid-2">
+      <div>
+        <h2 class="h2">Hi, I'm Haizel 👋</h2>
+        <p class="muted">I'm a former Quality / Process Control Inspector transitioning into a Virtual Assistant role with a strong eye for design. I keep things organized, respond quickly, and love turning ideas into clean, modern visuals that fit your brand.</p>
+        <ul class="list">
+          <li><span class="check" aria-hidden="true">✓</span> Inbox triage, filters & polite, timely responses</li>
+          <li><span class="check" aria-hidden="true">✓</span> Accurate data entry & spreadsheet cleanup</li>
+          <li><span class="check" aria-hidden="true">✓</span> Calendar management & meeting notes</li>
+          <li><span class="check" aria-hidden="true">✓</span> Canva graphics for Facebook, IG, LinkedIn</li>
+        </ul>
+        <div class="cta" style="margin-top:16px">
+          <a class="btn" href="mailto:haizelmasongsong@gmail.com">Email Me</a>
+          <a class="btn outline" href="https://www.linkedin.com/in/haizel-masongsong-4a4446377/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="assets/image1.png" alt="Photo or avatar of Haizel" />
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="wrap">
+      <h2 class="h2">Services</h2>
+      <p class="muted">Flexible assistance for busy founders and teams, plus simple, effective visuals.</p>
+      <div class="cards">
+        <article class="card service">
+          <h3>Email Management</h3>
+          <p>Set up labels/filters, draft replies, and keep your inbox under control daily.</p>
+        </article>
+        <article class="card service">
+          <h3>Data Entry</h3>
+          <p>Clean spreadsheets, accurate transfer, light research, and organized records.</p>
+        </article>
+        <article class="card service">
+          <h3>Scheduling</h3>
+          <p>Calendar management, meeting notes, follow-ups, and task reminders.</p>
+        </article>
+        <article class="card service">
+          <h3>Social Media Graphics</h3>
+          <p>On-brand posts and carousels for Facebook, Instagram, and LinkedIn (Canva).</p>
+        </article>
+        <article class="card service">
+          <h3>Branding Basics</h3>
+          <p>Palette, typography, and simple templates to keep your look consistent.</p>
+        </article>
+        <article class="card service">
+          <h3>File & Docs Setup</h3>
+          <p>Drive/Dropbox structure, naming, and standard operating templates.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="section" id="portfolio">
+    <div class="wrap">
+      <h2 class="h2">Portfolio</h2>
+      <p class="muted">A few sample designs.</p>
+      <div class="filter" aria-label="Portfolio filters">
+        <button class="active" data-filter="all" onclick="filterTiles(event)">All</button>
+        <button data-filter="social" onclick="filterTiles(event)">Social</button>
+        <button data-filter="branding" onclick="filterTiles(event)">Branding</button>
+        <button data-filter="misc" onclick="filterTiles(event)">Misc</button>
+      </div>
+      <div class="portfolio" id="portfolioGrid">
+        <!-- Replace src with your images in assets/ -->
+        <figure class="tile" data-tags="social">
+          <img src="assets/carousel.png" alt="Social media carousel design" />
+          <figcaption class="hover">Social Carousel • Canva</figcaption>
+        </figure>
+        <figure class="tile" data-tags="branding">
+          <img src="assets/Facebook Banner2.png" alt="Brand color palette and typography" />
+          <figcaption class="hover">Brand Starter Kit</figcaption>
+        </figure>
+        <figure class="tile" data-tags="social">
+          <img src="assets/Facebook Post.png" alt="Instagram post set" />
+          <figcaption class="hover">IG Post Set</figcaption>
+        </figure>
+        <figure class="tile" data-tags="misc">
+          <img src="assets/Infographic Design.png" alt="Infographic layout" />
+          <figcaption class="hover">Infographic</figcaption>
+        </figure>
+        <figure class="tile" data-tags="branding">
+          <img src="assets/Hey Z Music.png" alt="Logo and stationery mockup" />
+          <figcaption class="hover">Logo & Stationery</figcaption>
+        </figure>
+        <figure class="tile" data-tags="social">
+          <img src="assets/Facebook Banner1.png" alt="Facebook banner" />
+          <figcaption class="hover">FB Banner</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+<section class="section" id="contact">
+  <div class="wrap grid-2">
+    <div>
+      <h2 class="h2">Let’s work together</h2>
+      <p class="muted">
+        Tell me about your project or the support you need. I typically reply within 24 hours.
+      </p>
+      <div class="card" style="margin-top:10px">
+        <p><strong>Email:</strong> <a href="mailto:haizelmasongsong@gmail.com">haizelmasongsong@gmail.com</a></p>
+        <p><strong>LinkedIn:</strong>
+          <a href="https://www.linkedin.com/in/haizel-masongsong-4a4446377/" target="_blank" rel="noopener">
+            linkedin.com/in/haizel-masongsong-4a4446377/
+          </a>
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <form id="contactForm">
+        <input type="text" name="user_name" placeholder="Your name" required />
+        <input type="email" name="user_email" placeholder="Your email" required />
+        <textarea name="message" rows="6" placeholder="Your message" required></textarea>
+        <button class="btn pink" type="submit">Send Message</button>
+        <p id="formStatus" style="margin-top:8px; font-size:14px; color:var(--muted);"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+(function(){
+  emailjs.init("8lxg8YfjnYkfwVqHi"); // your Public Key
+})();
+
+const contactForm = document.getElementById('contactForm');
+const sendBtn = contactForm.querySelector('button[type="submit"]');
+const statusEl = document.getElementById('formStatus');
+
+contactForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  sendBtn.disabled = true;
+  const originalText = sendBtn.textContent;
+  sendBtn.textContent = 'Sending...';
+  statusEl.textContent = '';
+
+  emailjs.sendForm('service_4562wss', 'template_r8lo6jf', this)
+    .then(() => {
+      sendBtn.textContent = 'Sent!';
+      statusEl.style.color = 'green';
+      statusEl.textContent = '✅ Your message has been sent successfully!';
+      this.reset();
+      setTimeout(() => {
+        sendBtn.textContent = originalText;
+        sendBtn.disabled = false;
+        statusEl.textContent = '';
+      }, 4000);
+    }, (err) => {
+      console.error('EmailJS error:', err);
+      statusEl.style.color = 'red';
+      statusEl.textContent = '❌ Failed to send message. Please try again later.';
+      sendBtn.textContent = originalText;
+      sendBtn.disabled = false;
+    });
+});
+</script>
+
+  <footer>
+    <div class="footer-inner">
+      <p>© <span id="year"></span> Haizel Masongsong. All rights reserved.</p>
+      <div class="badges">
+        <span class="badge">#VA</span>
+        <span class="badge">#GraphicDesign</span>
+        <span class="badge">#Canva</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    function toggleMobile(){
+      const menu = document.getElementById('mobileMenu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple portfolio filter
+    function filterTiles(e){
+      const btn = e.target;
+      document.querySelectorAll('.filter button').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const tag = btn.getAttribute('data-filter');
+      document.querySelectorAll('#portfolioGrid .tile').forEach(tile =>{
+        const show = tag==='all' || tile.getAttribute('data-tags').includes(tag);
+        tile.style.display = show ? 'block' : 'none';
+      });
+    }
+
+    <script>
+</body>
+</html>
